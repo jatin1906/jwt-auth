@@ -1,0 +1,321 @@
+{
+  "info": {
+    "_postman_id": "a7425583-5011-4543-bd1e-930841313738",
+    "name": "jwt-authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18407373"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Jatin Kumar",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "jatinkumar7016@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "12345678",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "jatinkumar7016@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "12345678",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzkzNDY5NzYsImV4cCI6MTc3OTM1MDU3NiwibmJmIjoxNzc5MzQ2OTc2LCJqdGkiOiJQRjE3OWFENG10YXpFanUxIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.SQYVMN_eNgmN4EMgSfjKVEbiHHXoEA7TNtTnnV81t4k",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/profile",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Show Books",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzkzNTU5NzksImV4cCI6MTc3OTM1OTU3OSwibmJmIjoxNzc5MzU1OTc5LCJqdGkiOiJhRWFXVURER1NVOFI1SU50Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.WIqwuTKCZQCpFssEDBmxOCnj0eG9upHozHi2cwyCue0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "content",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Books",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzkzNTU5NzksImV4cCI6MTc3OTM1OTU3OSwibmJmIjoxNzc5MzU1OTc5LCJqdGkiOiJhRWFXVURER1NVOFI1SU50Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.WIqwuTKCZQCpFssEDBmxOCnj0eG9upHozHi2cwyCue0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "SSC",
+              "type": "text",
+              "uuid": "b6318d95-2a36-46f5-98fd-c9f7db8038aa"
+            },
+            {
+              "key": "author",
+              "value": "Prince",
+              "type": "text",
+              "uuid": "e131471d-4f94-4c2f-b482-4f805e6aa971"
+            },
+            {
+              "key": "price",
+              "value": "1200",
+              "type": "text",
+              "uuid": "5a2947fc-de40-4da6-aa88-a13b15a298bb"
+            },
+            {
+              "key": "cover_image",
+              "type": "file",
+              "uuid": "e8bdc61d-fe69-479f-9474-5def499a4d4a",
+              "src": "/C:/Users/jatin/OneDrive/Pictures/Screenshots/Screenshot (1).png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Books",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzkzNTU5NzksImV4cCI6MTc3OTM1OTU3OSwibmJmIjoxNzc5MzU1OTc5LCJqdGkiOiJhRWFXVURER1NVOFI1SU50Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.WIqwuTKCZQCpFssEDBmxOCnj0eG9upHozHi2cwyCue0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "cover_image",
+              "type": "file",
+              "uuid": "cf10e2d2-73b9-4d6b-af19-91c89c45033b",
+              "src": "/C:/Users/jatin/OneDrive/Pictures/Screenshots/Screenshot (2).png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/4",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Books",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzkzNTU5NzksImV4cCI6MTc3OTM1OTU3OSwibmJmIjoxNzc5MzU1OTc5LCJqdGkiOiJhRWFXVURER1NVOFI1SU50Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.WIqwuTKCZQCpFssEDBmxOCnj0eG9upHozHi2cwyCue0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/books/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "books",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
